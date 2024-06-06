@@ -210,7 +210,7 @@ overflow:"auto",
       </center>
       )}
             {wrong && (
-      <center><Typography sx={{ color: 'rgb(0, 80, 95)',padding:"20px" }}>Oops! Something Went wrong! Try Again</Typography></center>
+      <center><Typography sx={{ color: 'rgb(0, 80, 95)',padding:"20px" }}>Check your Internet Connection & Try Again</Typography></center>
       )}
       {!loading && error && (
        <center><Typography sx={{ color: 'rgb(0, 80, 95)',padding:"20px" }}>Oops! No results found.</Typography></center>
