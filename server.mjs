@@ -24,11 +24,11 @@ const extractTextContent = async (url) => {
       'https://github.com/Sparticuz/chromium/releases/download/v119.0.2/chromium-v119.0.2-pack.tar',
     ),
     headless: chromium.headless,
-    timeout: 300000, // Set the launch timeout to 5 minutes
+    timeout: 100000, // Set the launch timeout to 5 minutes
   });
 
   const page = await browser.newPage();
-  page.setDefaultNavigationTimeout(300000); // Set the default navigation timeout to 5 minutes
+  page.setDefaultNavigationTimeout(100000); // Set the default navigation timeout to 5 minutes
 
   try {
     await page.goto(url, { waitUntil: 'networkidle2', timeout: 300000 }); // Set the navigation timeout to 5 minutes
@@ -40,7 +40,7 @@ const extractTextContent = async (url) => {
 
   // Wait for the main content to be loaded
   try {
-    await page.waitForSelector('main', { timeout: 300000 }); // Set the waitForSelector timeout to 5 minutes
+    await page.waitForSelector('main', { timeout: 100000 }); // Set the waitForSelector timeout to 5 minutes
   } catch (error) {
     console.error(`Selector 'main' not found: ${error.message}`);
     await browser.close();
