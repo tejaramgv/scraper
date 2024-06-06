@@ -1,0 +1,56 @@
+.label{
+  background-color:red;
+  padding:.1rem .8rem .1rem .8rem;
+  color:white;
+  margin:10px 0 0 0;
+  width:auto;
+  display: inline-block;
+}
+.properties-cardMedia{
+width:50px !important;
+height:50px;
+  border-radius: 50%; 
+  object-fit: contain;
+
+}
+
+.properties-content{
+  
+  display:flex;
+  padding:10px;
+  justify-content:space-around;
+}
+.properties-card{
+  width:auto;
+
+}
+.properties-button{
+  display:flex;
+  padding:15px;
+  border-top:1px dashed rgb(116, 114, 114) ;
+  justify-content: flex-end;
+  background:
+    radial-gradient(circle 10px at top    left ,#faf9f900 100%,rgb(224, 223, 223)  ) top    left,
+    radial-gradient(circle 10px at top    right,#0000 100%,rgb(224, 223, 223)  ) top    right,
+    radial-gradient(circle 0px at bottom left ,#0000 0%,rgb(224, 223, 223)  ) bottom left,
+    radial-gradient(circle 0px at bottom right,#0000 0%,rgb(224, 223, 223)  ) bottom right;
+  background-size:51% 51%;
+  background-repeat:no-repeat;
+
+
+  
+
+}
+
+
+
+.properties-main{
+  background:
+  radial-gradient(circle 0px at top    left ,#faf9f900 100%,rgb(224, 223, 223)  ) top    left,
+  radial-gradient(circle 0px at top    right,#0000 100%,rgb(224, 223, 223)  ) top    right,
+  radial-gradient(circle 10px at bottom left ,#0000 100%,rgb(224, 223, 223)  ) bottom left,
+  radial-gradient(circle 10px at bottom right,#0000 100%,rgb(224, 223, 223)  ) bottom right;
+background-size:51% 51%;
+background-repeat:no-repeat;
+  
+}
