@@ -46,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@sparticuz/chromium-min": "^119.0.2"
   }
 }

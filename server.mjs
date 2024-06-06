@@ -1,7 +1,8 @@
 
- import express from 'express';
- import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium-min';
 //  import chromium from 'chrome-aws-lambda';
+import express from 'express'
 import cheerio from 'cheerio';
 import cors from 'cors'
 
@@ -18,9 +19,14 @@ let urls=[];
 
 const extractTextContent = async (url) => {
   //using puppeteer to scrape the data
-  const browser = await puppeteer.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
+const browser=await puppeteer.launch({
+  args: chromium.args,
+  defaultViewport: chromium.defaultViewport,
+  executablePath: await chromium.executablePath(
+      'https://github.com/Sparticuz/chromium/releases/download/v119.0.2/chromium-v119.0.2-pack.tar',
+  ),
+  headless: chromium.headless,
+});
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'networkidle2' });
 
@@ -149,7 +155,7 @@ app.get('/articles',async (req,res)=>{
   res.send({ textContents,titles,dates,urls,imgUrls })
 })
 //starting the server
-const PORT = process.env.PORT || 8081
+const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
