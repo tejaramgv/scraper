@@ -1,6 +1,7 @@
 
  import express from 'express';
-import puppeteer from 'puppeteer';
+ import puppeteer from 'puppeteer';
+//  import chromium from 'chrome-aws-lambda';
 import cheerio from 'cheerio';
 import cors from 'cors'
 
@@ -18,10 +19,7 @@ let urls=[];
 const extractTextContent = async (url) => {
   //using puppeteer to scrape the data
   const browser = await puppeteer.launch({
-    executablePath: await chromium.executablePath,
-    args: chromium.args,
-    defaultViewport: chromium.defaultViewport,
-    headless: chromium.headless,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'networkidle2' });
