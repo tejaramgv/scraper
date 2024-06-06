@@ -36,10 +36,10 @@ const popularSearches=["Pyhton","Java","Mobile","Laptop","React","Health"]
     setWrong(false);
     setData([])
     // scraping data using '/scrape'
-    const res=await axios.post("http://localhost:8080/scrape",{topic})
+    const res=await axios.post("https://scraper-ap6e.onrender.com/scrape",{topic})
     if(res.data.success){
       // getting data after scraping using '/articles'
-      const result=await axios.get("http://localhost:8080/articles");
+      const result=await axios.get("https://scraper-ap6e.onrender.com/articles");
       setLoading(false);
       if( result.data.textContents.length===0 && result.data.titles.length===0 && result.data.dates.length===0 &&
         result.data.urls.length===0 && result.data.imgUrls.length===0

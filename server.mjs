@@ -26,6 +26,7 @@ const browser=await puppeteer.launch({
       'https://github.com/Sparticuz/chromium/releases/download/v119.0.2/chromium-v119.0.2-pack.tar',
   ),
   headless: chromium.headless,
+  timeout: 300000,
 });
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'networkidle2' });
